@@ -3,11 +3,10 @@ from pathlib import Path
 
 import csv
 
-curr_path = Path.cwd()
-print (curr_path)
-#csvpath = Path('/Users/henrywycislo/DataClass/python-challenge/PyBank/Resources/budget_data.csv')
+# some reason my python environment path will not catch my python-challenge directory correctly
+csvpath = Path('/Users/henrywycislo/DataClass/python-challenge/PyBank/Resources/budget_data.csv')
 
-csvpath = Path('../Resources/budget_data.csv')
+#csvpath = Path('../Resources/budget_data.csv')
 
 # read the file 
 with open(csvpath, "r") as csvfile:
@@ -22,3 +21,7 @@ with open(csvpath, "r") as csvfile:
     #read each row 
     for row in csvreader:
         print(row)
+        thedate = row(0)
+        thePL = row(1)
+print(thedate)
+print(thePL)
