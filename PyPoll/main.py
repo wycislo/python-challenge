@@ -38,11 +38,9 @@ for Canidate in CandidateName:
 
 print(Total_Votes)
 
-print(VoteDictionary)
-
 for key in VoteDictionary:
     value = VoteDictionary[key]
     print("Candidate: " + key, value)
 
-
+# hello 
 
