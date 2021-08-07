@@ -3,11 +3,7 @@ from pathlib import Path
 import datetime
 import csv
 
-# some reason my python environment path will not catch my python-challenge directory correctly
-# csvpath = Path('/Users/henrywycislo/DataClass/python-challenge/PyBank/Resources/budget_data.csv')
 csvpath = Path('Resources/budget_data.csv')
-
-#csvpath = os.path.join('Resources','budget_data.csv')
 
 # lists to store data
 
