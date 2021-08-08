@@ -26,8 +26,8 @@ with open(csvpath,"r") as csvfile:
         Total_Votes = Total_Votes +1
 
 
-# create dictionay that counts votes for each candidate
-# PLDictionary = dict(zip(CandidateName,voter_id))
+# create dictionary that counts votes for each candidate
+# 
 VoteDictionary = {}
 for Canidate in CandidateName:
     if Canidate in VoteDictionary:
@@ -52,6 +52,10 @@ for key in VoteDictionary:
         print("Winner: " + winner)
 
 # for loop to get each candidate and vote_count for output file
+c_name = list(VoteDictionary.keys())
+i = len(c_name)
+print(i) 
+print(c_name[0])
 
 
 
@@ -61,6 +65,11 @@ output = (
     f"\nElection Results\n"
     f"----------------------------\n"
     f"Total Votes: {Total_Votes}\n"
+    f"----------------------------\n"
+    f"{c_name[0]}: \n"
+    f"{c_name[1]}: \n"
+    f"{c_name[2]}: \n"
+    f"{c_name[3]}:  \n"
     f"----------------------------\n"
     f"Winner: {winner} \n"
     
