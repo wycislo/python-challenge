@@ -53,10 +53,7 @@ for key in VoteDictionary:
 
 # for loop to get each candidate and vote_count for output file
 c_name = list(VoteDictionary.keys())
-i = len(c_name)
-print(i) 
-print(c_name[0])
-
+c_votes = list(VoteDictionary.values())
 
 
 # create output report 
@@ -66,13 +63,14 @@ output = (
     f"----------------------------\n"
     f"Total Votes: {Total_Votes}\n"
     f"----------------------------\n"
-    f"{c_name[0]}: \n"
-    f"{c_name[1]}: \n"
-    f"{c_name[2]}: \n"
-    f"{c_name[3]}:  \n"
+    f"{c_name[0]}: {(c_votes[0]/Total_Votes)*100 :.2f}% ({c_votes[0]})\n"
+    f"{c_name[1]}: {(c_votes[1]/Total_Votes)*100  :.2f}% ({c_votes[1]})\n"
+    f"{c_name[2]}: {(c_votes[2]/Total_Votes)*100  :.2f}% ({c_votes[2]})\n"
+    f"{c_name[3]}: {(c_votes[3]/Total_Votes)*100  :.2f}% ({c_votes[3]})\n"
     f"----------------------------\n"
     f"Winner: {winner} \n"
-    
+    f"----------------------------\n"
+    f"\n\n"
     )
 
 # hello 
