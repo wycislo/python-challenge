@@ -4,8 +4,9 @@ import os
 from pathlib import Path
 import csv
 
+print(os.getcwd())
 
-csvpath = Path('Resources\election_data.csv')
+csvpath = Path('Resources/election_data.csv')
 
 # lists to store data
 
