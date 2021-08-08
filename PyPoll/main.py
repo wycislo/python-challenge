@@ -1,12 +1,11 @@
-# PyBank
+
 # Read CSV file, process data, write to output file and to terminal
 import os
-from pathlib import Path
+import pathlib
 import csv
 
-print(os.getcwd())
-
-csvpath = Path('Resources/election_data.csv')
+csvpath = pathlib.Path('Resources/election_data.csv')
+winner_report = pathlib.Path('Analysis/winner_report.txt')
 
 # lists to store data
 
@@ -37,11 +36,40 @@ for Canidate in CandidateName:
         VoteDictionary[Canidate] = 1
 
 
-print(Total_Votes)
+print("Total number of votes cast: " + str(Total_Votes))
 
 for key in VoteDictionary:
     value = VoteDictionary[key]
-    print("Candidate: " + key, value)
+    print("Candidate: " + str(key) +" "+ "{:.2f}".format((value/Total_Votes)*100) +"% "+ str(value))
+
+# find the winner
+max_vote_count = max(VoteDictionary.values())
+# print(max_vote_count)
+for key in VoteDictionary:
+    value = VoteDictionary[key]
+    if value == max_vote_count:
+        winner = key
+        print("Winner: " + winner)
+
+# for loop to get each candidate and vote_count for output file
+
+
+
+# create output report 
+output = (
+    f"\n\n"
+    f"\nElection Results\n"
+    f"----------------------------\n"
+    f"Total Votes: {Total_Votes}\n"
+    f"----------------------------\n"
+    f"Winner: {winner} \n"
+    
+    )
 
 # hello 
+# Export the results to text file
+
+outfile = open(winner_report, 'w')
+outfile.write(output)
+outfile.close()
 
