@@ -1,5 +1,4 @@
 import os
-#from pathlib import Path
 import pathlib
 import datetime
 import csv
@@ -18,7 +17,7 @@ total_PL = 0
 with open(csvpath,"r") as csvfile:
     csvreader = csv.reader(csvfile,delimiter=',')
     csv_header = next(csvreader)
-    print(f"CSV Header:  {csv_header}")
+    # print(f"CSV Header:  {csv_header}")
 
     for row in csvreader:
         PLDate.append(row[0])
@@ -34,19 +33,19 @@ PLDictionary = dict(zip(PLAmount,PLDate))
 
 # find date for max amount 
 # max_date = PLDictionary.get(max_amount)
+
 max_date = PLDictionary.get(max(PLAmount))
-print(max_date +"," +str(max_amount))
+# print(max_date +"," +str(max_amount))
 min_date = PLDictionary.get(min(PLAmount))
-print(min_date +"," +str(min_amount))
+# print(min_date +"," +str(min_amount))
 
 total_months = len(PLDate)
 average_change = total_PL/total_months
-#test_profit_month = PLDictionary(str(max(PLAmount)))
-#print(test_profit_month)
-#total_PL = sum(float(PLAmount))
+
+# Print to local screen 
 print("Total Months: " + str(total_months))
 print("Total: $" + str(total_PL))
-print("Average Change: " + str(total_PL/total_months))
+print("Average Change: " + str(round(total_PL/total_months)))
 print("Greatest Increase in Profits: " + max_date +" ("+str(max_amount) +")")
 print("Greatest Increase in Profits: " + min_date +" ("+str(min_amount) +")")
 
@@ -65,7 +64,7 @@ output = (
     )
 
 # Print the output (to terminal)
-print(output)
+# print(output)
 
 # Export the results to text file
 
